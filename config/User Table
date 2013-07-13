@@ -1,0 +1,6 @@
+User Table 
+	username:    string
+	email:       string
+	password:    string
+	created_at:  datetime
+	updated_at:  datetime

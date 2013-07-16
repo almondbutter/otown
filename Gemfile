@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 
 gem 'devise'
 
+gem 'thin'
+
 gem 'rails', '3.2.8'
 
 # Bundle edge Rails instead:

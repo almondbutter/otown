@@ -3,6 +3,8 @@ class LinksController < ApplicationController
   	@link = Link.find(params[:id])
   end
 
+  	before_filter :authenticate_user!
+
   def new   
     @link = Link.new
   end
@@ -12,11 +14,11 @@ class LinksController < ApplicationController
 
   	respond_to do |format|
   		if @link.save
-  			format.html { render :action => "create" }
-  			format.json { render :action => "new" }
+  			format.html { redirect_to @link, notice: 'Link was successfully created.' }
+  			format.json { render :json => @link, status: :created, location: @link }
   		else
   			format.html { render :action => "new" }
-  			format.html { render :json => @link.errors, :status => :unprocessable_entity }
+  			format.json { render :json => @link.errors, :status => :unprocessable_entity }
   		end
   	end
   end

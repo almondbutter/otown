@@ -5,6 +5,7 @@ Otown::Application.routes.draw do
   # first created -> highest priority.
 
   resources :pages
+  resources :links
   root :to => "pages#index"
   
   # Sample of regular route:

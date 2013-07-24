@@ -1,5 +1,4 @@
 class User < ActiveRecord::Base
-      has_many :links
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
@@ -11,5 +10,6 @@ class User < ActiveRecord::Base
   # attr_accessible :title, :body
   attr_accessible   :email, :username
 
-  
+  has_many :links
+  has_many :comments    
 end

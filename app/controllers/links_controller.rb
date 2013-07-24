@@ -2,13 +2,10 @@ class LinksController < ApplicationController
   def show
   	@link = Link.find(params[:id])
   end
-
-  	before_filter :authenticate_user!
-
-  def new   
+  def new
+  	authenticate_user!
     @link = Link.new
   end
-
   def create
   	@link = Link.new(params[:link])
 

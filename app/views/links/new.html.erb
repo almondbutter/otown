@@ -15,10 +15,10 @@
     <%= f.label :title %><br />
     <%= f.text_field :title %>
   </div>
-  <div class="field">
-    <%= f.label :url %><br />
-    <%= f.text_field :url %>
-  </div>
+  <div class="field"><br />
+    <%= f.label :url %>
+    <%= f.text_field :url %><p>Please use http:// in the url field.</p>
+  </div><br />
   <div class="actions">
     <%= f.submit %>
   </div>

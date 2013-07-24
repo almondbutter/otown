@@ -4,8 +4,8 @@ Otown::Application.routes.draw do
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
-  resources :pages
-  resources :links
+  resources :pages 
+  resources :links 
   root :to => "pages#index"
   
   # Sample of regular route:

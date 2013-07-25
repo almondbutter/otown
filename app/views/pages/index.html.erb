@@ -5,6 +5,7 @@
   <% @links.each do |link| %>
     <li><%= link_to link.title, link.url %></li>
     <%= link_to "comments", link %>
+    <%= link_to "+", votes_path(:vote => {:link_id => link.id, :up => true}), :method => :post %>
   <% end %>
 </ul>
 

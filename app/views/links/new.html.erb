@@ -15,9 +15,17 @@
     <%= f.label :title %><br />
     <%= f.text_field :title %>
   </div>
+  <div class="field">
+    <%= f.label :location %><br />
+    <%= f.text_field :location %>
+  </div>
+  <div class="field">
+    <%= f.label :datetime %><br />
+    <%= f.text_field :datetime %>
+  </div>
   <div class="field"><br />
     <%= f.label :url %>
-    <%= f.text_field :url %><p>Please use http:// in the url field.</p>
+    <%= f.text_field :url %>
   </div><br />
   <div class="actions">
     <%= f.submit %>

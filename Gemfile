@@ -6,7 +6,11 @@ gem 'thin'
 
 gem 'will_paginate', '~> 3.0'
 
+ruby '1.9.3'
+
 gem 'rails', '3.2.8'
+
+gem "heroku"
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

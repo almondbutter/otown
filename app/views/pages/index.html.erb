@@ -1,6 +1,8 @@
 <h2>Destination Oneonta Homepage, just the beginning.</h2>
-<%= link_to "Add an Event", new_link_path %>
-
+<% if current_user.present? %>
+  <%= link_to "Add an Event", new_link_path %>
+<% else %>
+  <%= link_to "New User?", new_user_registration_path %>
  <ul>
   <% @links.each do |link| %>
     <li><%= link_to link.title, link %></li>

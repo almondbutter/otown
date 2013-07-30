@@ -1,6 +1,8 @@
-<h2>Destination Oneonta Homepage, just the beginning.</h2>
-<%= link_to "Add an Event", new_link_path %>
-
+<h2>Destination Oneonta - Events listing source for what is happening around Oneonta, NY</h2>
+<% if current_user.present? %>
+  <%= link_to "Add an Event", new_link_path %>
+<% else %>
+  <%= link_to "New User?", new_user_registration_path %>
  <ul>
   <% @links.each do |link| %>
     <li><%= link_to link.title, link %></li>
@@ -8,14 +10,14 @@
     Votes: <%= link.votes.where(:up => true).count - link.votes.where(:up => false).count %>
     <% if current_user && current_user.votes.where(:link_id => link.id, :up => true).present? %>
     *
-  	<% else %>
-  		<%= link_to "+", votes_path(:vote => {:link_id => link.id, :up => true}), :method => :post %>
-  	<% end %>
-  	<% if current_user && current_user.votes.where(:link_id => link.id, :up => false).present? %>
+    <% else %>
+      <%= link_to "+", votes_path(:vote => {:link_id => link.id, :up => true}), :method => :post %>
+    <% end %>
+    <% if current_user && current_user.votes.where(:link_id => link.id, :up => false).present? %>
     *
     <% else %>
-	    <%= link_to "-", votes_path(:vote => {:link_id => link.id, :up => false}), :method => :post %>
-  	<% end %>
+      <%= link_to "-", votes_path(:vote => {:link_id => link.id, :up => false}), :method => :post %>
+    <% end %>
   <% end %>
  </ul>
 

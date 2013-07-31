@@ -17,6 +17,7 @@
     <% end %>
   <% end %>
  </ul>
+<%= will_paginate @links %>
 <% else %>
   <%= link_to "New User?", new_user_registration_path %>
  <ul>

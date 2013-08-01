@@ -5,7 +5,7 @@
   <% link_href = @link.url %>
   <% link_href = "http://#{link_href}" unless link_href.match(/^https?:\/\//) %>
 	<%= link_to @link.url, link_href %><br />
-	<p>Posted by:  <%= @link.email %> at <%= @link.created_at %></p>
+	<p>Posted by:  <%= @link.user_id %> at <%= @link.created_at %></p>
 </p>
 
       <h2>Comments:</h2>

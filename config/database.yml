@@ -8,7 +8,7 @@ development:
   encoding: unicode
   database: otown_development
   pool: 5
-  username: otown
+  username: postgres
   password: 
   host: localhost
   
@@ -21,7 +21,7 @@ test:
   encoding: unicode
   database: otown_test
   pool: 5
-  username: otown
+  username: postgres
   password: 
   host: localhost
   

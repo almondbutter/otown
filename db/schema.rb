@@ -13,14 +13,6 @@
 
 ActiveRecord::Schema.define(:version => 20130727233400) do
 
-  create_table "CreateLinks", :force => true do |t|
-    t.integer  "user_id_id"
-    t.text     "title"
-    t.string   "url"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
   create_table "comments", :force => true do |t|
     t.integer  "user_id"
     t.integer  "link_id"
@@ -41,7 +33,7 @@ ActiveRecord::Schema.define(:version => 20130727233400) do
 
   create_table "users", :force => true do |t|
     t.string   "email"
-    t.string   "username"
+    t.string   "user_id"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
     t.string   "encrypted_password",     :default => "", :null => false

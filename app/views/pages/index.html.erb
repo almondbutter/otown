@@ -1,4 +1,4 @@
-<h2>Destination Oneonta</h2><h3>Events listing source for what is happening around Oneonta, NY</h3>
+<h2>Destination Oneonta</h2><h3>Events listing source for Oneonta, NY</h3>
 <% if current_user.present? %>
   <%= link_to "Add an Event", new_link_path %>
   <% @links.each do |link| %>
@@ -35,6 +35,10 @@
     <% else %>
       <%= link_to "-", votes_path(:vote => {:link_id => link.id, :up => false}), :method => :post %>
     <% end %>
+    <li class="traffic_data">
+            <%= pluralize(link.votes.where(:up => true).count, "vote") %> |
+            <%= link_to "#{pluralize(link.comments.count, "comment")}", link %>
+    </li>
   <% end %>
  </ul>
 

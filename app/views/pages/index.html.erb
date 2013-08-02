@@ -1,4 +1,4 @@
-<h2>Destination Oneonta - Events listing source for Oneonta, NY</h2>
+<h2>Destination Oneonta - Events listing for Oneonta, NY</h2>
 <% if current_user.present? %>
   <%= link_to "Add an Event", new_link_path %>
  <ul>
@@ -40,3 +40,4 @@
  </ul>
 
  <%= will_paginate @links %>
+ <% end %>

@@ -60,13 +60,6 @@
       class="<%= yield :body_class %>
       <%= current_user ? 'logged-in' : 'not-logged-in' %>">
   
-<%= content_for :sidebar do %>
-  <%= link_to "Add a link", new_link_path %><br />
-<% end %>
-
-<%= content_for :sidebar do %>
-  <%= link_to "Developed by Glass Lantern Media", 'http://glasslanternmedia.com' %>
-<% end %>
 
     <div class="container" id="getting-started">
       <div class="row">

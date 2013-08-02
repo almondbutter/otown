@@ -12,22 +12,22 @@
     <link href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css" rel="stylesheet">
     <link href="http://twitter.github.com/bootstrap/assets/css/bootstrap-responsive.css" rel="stylesheet">
 
-    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= stylesheet_link_tag "application", :media => "all" %>
 
     <script src="http://heroku.github.com/template-app-bootstrap/jquery-1.7.1.min.js"></script>
     <script src="http://heroku.github.com/template-app-bootstrap/jquery.replacetext.min.js"></script>
 
     <!--
-      IMPORTANT:
-      This is Heroku specific styling. Remove to customize.
-    -->
+IMPORTANT:
+This is Heroku specific styling. Remove to customize.
+-->
     <link href="http://heroku.github.com/template-app-bootstrap/heroku.css" rel="stylesheet">
     <!-- /// -->
 
     <!--
-      IMPORTANT:
-      To do the replacement  example for the real name application
-    -->
+IMPORTANT:
+To do the replacement example for the real name application
+-->
     <script src="http://heroku.github.com/template-app-bootstrap/heroku.js"></script>
     <!-- /// -->
 
@@ -38,7 +38,7 @@
     <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container">
-          <a href="http://blooming-beyond-6003.herokuapp.com/" class="brand">Destination Oneonta</a>
+          <a href="/" class="brand">Destination Oneonta</a>
           <div class='nav-collapse'>
             <ul class='nav'>
               <%# user is logged in, show log out link %>
@@ -51,15 +51,15 @@
               <% end %>
             </ul>
           </div>
-          
+          <!--
+IMPORTANT:
+This is Heroku specific markup. Remove to customize.
+-->
+          <a href="/" class="brand" id="heroku">by <strong>heroku</strong></a>
+          <!-- /// -->
         </div>
       </div>
     </div>
-
-<body id="<%= yield :body_id %>"
-      class="<%= yield :body_class %>
-      <%= current_user ? 'logged-in' : 'not-logged-in' %>">
-  
 
     <div class="container" id="getting-started">
       <div class="row">

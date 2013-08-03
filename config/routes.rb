@@ -7,8 +7,12 @@ Otown::Application.routes.draw do
   resources :pages 
   resources :links 
   resources :comments
-  resources :votes
-  root :to => "index#index"
+  resources :votes, :only => [:create]
+  root :to => "pages#index"
+
+  devise_scope :user do
+    match 'users/sign_out' => 'devise/sessions#destroy'
+  end
   
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'

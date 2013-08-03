@@ -8,7 +8,7 @@ Otown::Application.routes.draw do
   resources :links 
   resources :comments
   resources :votes
-  root :to => "pages#index"
+  root :to => "index#index"
   
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'

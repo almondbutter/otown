@@ -7,7 +7,7 @@ Otown::Application.routes.draw do
   resources :pages 
   resources :links 
   resources :comments
-  resources :votes, :only => [:create]
+  resources :votes
   root :to => "pages#index"
 
   devise_scope :user do

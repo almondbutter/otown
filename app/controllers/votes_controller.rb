@@ -13,4 +13,13 @@ class VotesController < ApplicationController
       redirect_to :back, alert: 'Please sign in to vote.'
     end
   end
+
+  def index
+    @votes = Vote.all
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @votes }
+    end
+  end
 end

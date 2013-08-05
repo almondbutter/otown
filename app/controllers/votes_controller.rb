@@ -16,10 +16,5 @@ class VotesController < ApplicationController
 
   def index
     @votes = Vote.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @votes }
-    end
   end
 end

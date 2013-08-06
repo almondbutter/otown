@@ -50,6 +50,10 @@
                 <li><%= link_to 'Register Now!', new_user_registration_path %></li>
               <% end %>
             </ul>
+          <div class="span10"><%= form_tag(search_path, :method => "get", :style => "margin: 5px 0 0 0") do %> 
+            <%= text_field_tag(:q, nil, :placeholder => "search") %>
+              <%= submit_tag("Search") %></span>
+          <% end %>
           </div>
         </div>
       </div>
@@ -60,14 +64,6 @@
         <div class="span6 offset2">
         <div class="page-header"></div>
 
-      <% if content_for?(:sidebar) %>
-  <div class="span2">
-    <div class="page-header"></div>
-    <h2>Sidebar</h2>
-    <%= yield :sidebar %>
-  </div>
-<% end %>
-
         <% [:notice, :error, :alert].each do |level| %>
     <% unless flash[level].blank? %>
       <div data-alert="alert" class="alert alert-<%= level %> fade in">
@@ -77,7 +73,18 @@
     <% end %>
   <% end %>
 
+ <div class="sidebar">
+        <%= content_for :sidebar do %>
+            <%= link_to "Add a link", new_link_path %><br />
+        <% end %>
+
+        <%= content_for :sidebar do %>
+            <%= link_to "Awesome Blog", 'http://schneems.com' %>
+        <% end %>
+        <% yield :sidebar %>
+  </div>
           <%= yield %>
+
         </div>
       </div>
     </div>

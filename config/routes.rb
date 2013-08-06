@@ -8,6 +8,7 @@ Otown::Application.routes.draw do
   resources :links 
   resources :comments
   resources :votes
+  get 'search' => 'search#index'
   root :to => "pages#index"
 
   devise_scope :user do

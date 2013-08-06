@@ -14,8 +14,6 @@ gem 'textacular', '~> 3.0'
 
 require 'textacular'
 
-ActiveRecord::Base.extend(Textacular)
-
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 

@@ -12,8 +12,6 @@ gem 'rails_12factor', group: :production
 
 gem 'textacular', '~> 3.0'
 
-gem 'ruby', '2.0'
-
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 

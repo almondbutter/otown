@@ -10,7 +10,7 @@ gem 'rails', '3.2.8'
 
 gem 'rails_12factor', group: :production
 
-gem 'textacular', '~> 3.0'
+gem 'textacular', '~> 3.0', require: 'textacular/rails'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

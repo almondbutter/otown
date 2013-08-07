@@ -3,7 +3,7 @@
   <%= link_to "Add an Event", new_link_path %>
  <ul>
   <% @links.each do |link| %>
-    <li><%= link_to link.title, link %></li>
+    <li><%= link_to link.title %><br></li>
     <%= link_to "comments", link %>
     Votes: <%= link.votes.where(:up => true).count - link.votes.where(:up => false).count %>
     <% if current_user && current_user.votes.where(:link_id => link.id, :up => true).present? %>
@@ -23,7 +23,7 @@
   <%= link_to "New User?", new_user_registration_path %>
  <ul>
   <% @links.each do |link| %>
-    <li><%= link_to link.title, link %></li>
+    <li><%= link_to link.title %></li>
     <%= link_to "comments", link %>
     Votes: <%= link.votes.where(:up => true).count - link.votes.where(:up => false).count %>
     <% if current_user && current_user.votes.where(:link_id => link.id, :up => true).present? %>

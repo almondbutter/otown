@@ -13,8 +13,4 @@ class VotesController < ApplicationController
       redirect_to :back, alert: 'Please sign in to vote.'
     end
   end
-
-  def index
-    @votes = Vote.all
-  end
 end

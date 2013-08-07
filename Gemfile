@@ -17,6 +17,11 @@ gem 'textacular', '~> 3.0', require: 'textacular/rails'
 
 gem 'pg'
 
+group :test do
+	gem 'database_cleaner'
+	gem 'capybara', '~> 1.1.2'
+end
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

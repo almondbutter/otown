@@ -50,9 +50,11 @@
                 <li><%= link_to 'Register Now!', new_user_registration_path %></li>
               <% end %>
             </ul>
-          <%= form_tag(search_path, :method => "get", :style => "margin: 5px 0 0 0") do %>
+          <div class="pull-right">
+            <%= form_tag(search_path, :method => "get", :style => "margin: 5px 0 0 0") do %>
             <%= text_field_tag(:q, nil, :placeholder => "search") %>
             <%= submit_tag("Search") %>
+          </div>
           <% end %>
           </div>
         </div>
@@ -84,12 +86,17 @@
         <% yield :sidebar %>
   </div>
           <%= yield %>
- <div class="footer">  
-    <p><a href="http://glasslanternmedia.com">Developed by Glass lantern media</a></p>
- </div>
+
         </div>
       </div>
     </div>
     <%= javascript_include_tag "application" %>
   </body>
+
+  <footer>
+    <div class="row">
+      <div class="span10"><small><a href="http://glasslanternmedia.com">Developed by Glass lantern media</a></small>
+    </div>
+        
+  </footer>
 </html>

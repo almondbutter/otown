@@ -1,4 +1,5 @@
-<h2>Destination Oneonta</h2><h4>Events listing source for what's happening in Oneonta, NY</h4>
+<h2>Destination Oneonta</h2><h4>Events listing source for what's happening in Oneonta, NY</h4> 
+<h5>Sign up to post your own events! Help build local community!</h5>
 <% if current_user.present? %>
   <%= link_to "Add an Event", new_link_path %>
  <ul>
@@ -26,10 +27,11 @@
     <li><%= link_to link.title, link %></li>
     <%= link_to "comments", link %>
     Going?: <%= link.votes.where(:up => true).count - link.votes.where(:up => false).count %>
+    <%= link_to "+", votes_path(:vote => {:link_id => link.id, :up => true}), :method => :post %>
     <% if current_user && current_user.votes.where(:link_id => link.id, :up => true).present? %>
     *
     <% else %>
-      <%= link_to "+", votes_path(:vote => {:link_id => link.id, :up => true}), :method => :post %>
+      
     <% end %>
     <% if current_user && current_user.votes.where(:link_id => link.id, :up => false).present? %>
     *

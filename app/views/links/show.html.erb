@@ -2,9 +2,21 @@
 	<h3>Event:  </h3><h1><%= @link.title %></h1>
   <h3>Where:  </h3><h1><%= @link.location %></h1>
   <h3>When:  </h3><h1><%= @link.datetime %></h1>
-  <% link_href = @link.url %>
-  <% link_href = "http://#{link_href}" unless link_href.match(/^https?:\/\//) %>
+  <% raw_url   = @link.url.to_s %>
+  <% begin %>
+  <%   uri = URI.parse(raw_url) %>
+  <%   if uri.scheme.nil? %>
+  <%     uri = URI.parse("http://#{raw_url}") %>
+  <%   end %>
+  <%   link_href = (uri.scheme == 'http' || uri.scheme == 'https') ? uri.to_s : nil %>
+  <% rescue URI::InvalidURIError %>
+  <%   link_href = nil %>
+  <% end %>
+  <% if link_href.present? %>
 	<%= link_to @link.url, link_href %><br />
+  <% else %>
+	<%= @link.url %><br />
+  <% end %>
 	<p>Posted at <%= @link.user %><%= @link.created_at %></p>
 </p>
 
